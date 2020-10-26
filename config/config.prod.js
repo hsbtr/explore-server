@@ -5,6 +5,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
+// eslint-disable-next-line no-unused-vars
 module.exports = appinfo => {
   /**
    * built-in config

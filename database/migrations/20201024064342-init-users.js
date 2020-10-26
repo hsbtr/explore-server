@@ -19,6 +19,7 @@ module.exports = {
     });
   },
   // 在执行数据库降级时调用的函数，删除 users 表
+  // eslint-disable-next-line no-unused-vars
   down: async (queryInterface, Sequelize) => {
     /**
      * 在这里添加修改命令
