@@ -18,18 +18,25 @@ module.exports = appInfo => {
   // 开发 mysql数据源
   config.sequelize = {
     // host
-    host: '127.0.0.1',
+    host: 'localhost',
     // 端口号
     port: 3306,
     // 用户名
     username: 'root',
     // 密码
-    password: '',
+    password: '1234567',
     // 支持何种数据库
     dialect: 'mysql',
     // 数据库名
-    database: 'egg-sequelize-doc-default',
+    database: 'explore',
   };
+  // csrf 验证
+  config.security = {
+    csrf: {
+      headerName: 'x-csrf-token',
+    },
+  };
+
   // 在这里添加您的中间件配置
   config.middleware = [];
 

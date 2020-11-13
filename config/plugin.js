@@ -11,4 +11,9 @@ module.exports = {
     enable: true, // 开启插件
     package: 'egg-sequelize', // 插件来源
   },
+  // 路由模块化
+  routerPlus: {
+    enable: true,
+    package: 'egg-router-plus',
+  },
 };

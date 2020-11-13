@@ -5,5 +5,6 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  router.get('/', controller.home.index);
+  const userRouter = router.namespace('/user');
+  userRouter.post('/sigIn', controller.users.sigIn);
 };
