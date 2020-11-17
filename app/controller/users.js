@@ -3,6 +3,7 @@
 const Controller = require('egg').Controller;
 
 class UsersController extends Controller {
+  // 注册
   async sigIn() {
     const { ctx } = this;
     const { name } = ctx.request.body;
@@ -24,6 +25,7 @@ class UsersController extends Controller {
       ctx.status = 200;
     }
   }
+  // 上传
   async upLoad() {
     const { ctx } = this;
     const { name } = ctx.request.body;
