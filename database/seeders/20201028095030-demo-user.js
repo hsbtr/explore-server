@@ -2,11 +2,13 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    const { UUID, UUIDV4 } = Sequelize;
+    console.log(Sequelize.DataTypes);
     await queryInterface.bulkInsert('users', [{
-      id: '456134579',
+      id: UUIDV4,
       user_name: 'hsbtr',
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      created_at: new Date(),
+      updated_at: new Date(),
     }], {});
   },
 

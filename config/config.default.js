@@ -14,7 +14,12 @@ module.exports = appInfo => {
 
   // 用于cookie签名的密钥，应改为自己的，并保持安全
   config.keys = appInfo.name + '_3099_160344_745689312_hh';
-
+  // csrf 验证
+  config.security = {
+    csrf: {
+      headerName: 'x-csrf-token',
+    },
+  };
   // 开发 mysql数据源
   config.sequelize = {
     // host
@@ -30,13 +35,16 @@ module.exports = appInfo => {
     // 数据库名
     database: 'explore',
   };
-  // csrf 验证
-  config.security = {
-    csrf: {
-      headerName: 'x-csrf-token',
+
+  // Redis 配置
+  config.redis = {
+    client: {
+      port: 6379, // 端口
+      host: '127.0.0.1', // 地址
+      password: '',
+      db: 0,
     },
   };
-
   // 在这里添加您的中间件配置
   config.middleware = [];
 
