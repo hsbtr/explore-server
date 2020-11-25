@@ -16,7 +16,7 @@ class UsersController extends Controller {
       return;
     }
     prams.user_name = name;
-    const result = await ctx.service.users.addUser(prams);
+    const result = await ctx.service.user.addUser(prams);
     if (result) {
       pr.mess = '添加成功';
       pr.status = 1;
