@@ -81,11 +81,13 @@ module.exports = app => {
     created_at: {
       type: DATE,
       allowNull: false,
+      defaultValue: new Date(),
       comment: '创建时间',
     },
     updated_at: {
       type: DATE,
       allowNull: false,
+      defaultValue: new Date(),
       comment: '更新时间',
     },
   }, {
