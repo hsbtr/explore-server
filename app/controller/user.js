@@ -8,7 +8,6 @@ class UsersController extends Controller {
     const { ctx } = this;
     const { name } = ctx.request.body;
     const prams = {};
-    console.log(ctx.request.body);
     const pr = { mess: '参数传递错误', status: 0, data: null };
     if (!name || typeof name === 'undefined') {
       ctx.body = pr;
