@@ -6,49 +6,24 @@ class BaseController extends Controller {
   // 获取底部菜单
   async tabBar() {
     const { ctx } = this;
-    const tabBarList = await ctx.service.cache.getItem('tabBarList');
+    const { service } = ctx;
+    const tabBarList = await service.cache.getItem('tabBarList');
     const pr = {
       state: 200,
       result: null,
       mess: '查询成功',
     };
     if (!tabBarList) {
-      const data = [
-        {
-          id: this.app.Sequelize.UUIDV4,
-          text: '首页',
-          name: 'home',
-          sort: 1,
-          defaultIcon: 'http://localhost:7001/public/img/home.png',
-          selectIcon: 'http://localhost:7001/public/img/home1.png',
-        },
-        {
-          id: this.app.Sequelize.UUIDV4,
-          text: '发现',
-          name: 'find',
-          sort: 2,
-          defaultIcon: 'http://localhost:7001/public/img/find.png',
-          selectIcon: 'http://localhost:7001/public/img/find1.png',
-        },
-        {
-          id: this.app.Sequelize.UUIDV4,
-          text: '消息',
-          name: 'mess',
-          sort: 3,
-          defaultIcon: 'http://localhost:7001/public/img/mess.png',
-          selectIcon: 'http://localhost:7001/public/img/mess1.png',
-        },
-        {
-          id: this.app.Sequelize.UUIDV4,
-          text: '我的',
-          name: 'my',
-          sort: 4,
-          defaultIcon: 'http://localhost:7001/public/img/my.png',
-          selectIcon: 'http://localhost:7001/public/img/my1.png',
-        },
-      ];
-      await ctx.service.cache.setItem('tabBarList', data, 60 * 60);
-      pr.result = data;
+      const data = await service.base.getTabBar();
+      if (data) {
+        await service.cache.setItem('tabBarList', data, 60 * 60);
+        pr.result = data;
+        ctx.status = 200;
+        ctx.body = pr;
+        return;
+      }
+      pr.state = 400;
+      pr.mess = '查询为空';
       ctx.status = 200;
       ctx.body = pr;
       return;

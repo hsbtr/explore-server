@@ -25,9 +25,19 @@ class CacheService extends Service {
    * */
   async getItem(key) {
     if (this.app.redis) {
-      const data = await this.app.redis.get(key);
-      if (!data) return;
-      return JSON.parse(data);
+      const value = await this.app.redis.get(key);
+      if (!value) return;
+      return JSON.parse(value);
+    }
+  }
+
+  /**
+   * redis 删除
+   * @param {string} key 存储的名字
+   */
+  async remItem(key) {
+    if (this.app.redis) {
+      await this.app.redis.del(key);
     }
   }
 }
