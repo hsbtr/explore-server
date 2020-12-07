@@ -7,6 +7,7 @@ class BaseController extends Controller {
   async tabBar() {
     const { ctx } = this;
     const { service } = ctx;
+    const { types } = ctx.query;
     const tabBarList = await service.cache.getItem('tabBarList');
     const pr = {
       state: 200,
