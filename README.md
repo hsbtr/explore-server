@@ -17,6 +17,7 @@ $ open http://localhost:7001/
 ```
 ### 构建
 进入项目文件目录,运行以下命令，然后在output文件里找到构建好的文件，上传到服务器解压即可部署运行
+注意：有自定的文件夹一定要先建好，不然报错
 ```bash
 $ npm install --production
 $ tar -zcvf ./output/release.tgz .
@@ -24,7 +25,7 @@ $ tar -zcvf ./output/release.tgz .
 构建时如要排除某些文件请使用以下命令
 ```bash
 $ npm install --production
-$ tar -zcvf ./output/release.tgz --exclude=.idea --exclude=output --exclude=README.md .
+$ tar -zcvf ./output/release.tgz --exclude=.idea --exclude=.git --exclude=.github --exclude=output --exclude=node_modules  --exclude=logs  .
 ```
 
 ### 运行
