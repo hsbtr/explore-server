@@ -7,7 +7,7 @@ class BaseService extends Service {
     const { ctx } = this;
     const data = [
       {
-        id: this.app.Sequelize.UUIDV4,
+        id: ctx.app.Sequelize.UUIDV4,
         text: '首页',
         name: 'home',
         sort: 1,
@@ -15,7 +15,7 @@ class BaseService extends Service {
         selectIcon: 'http://localhost:7001/public/img/home1.png',
       },
       {
-        id: this.app.Sequelize.UUIDV4,
+        id: ctx.app.Sequelize.UUIDV4,
         text: '发现',
         name: 'find',
         sort: 2,
@@ -23,7 +23,7 @@ class BaseService extends Service {
         selectIcon: 'http://localhost:7001/public/img/find1.png',
       },
       {
-        id: this.app.Sequelize.UUIDV4,
+        id: ctx.app.Sequelize.UUIDV4,
         text: '消息',
         name: 'mess',
         sort: 3,
@@ -31,7 +31,7 @@ class BaseService extends Service {
         selectIcon: 'http://localhost:7001/public/img/mess1.png',
       },
       {
-        id: this.app.Sequelize.UUIDV4,
+        id: ctx.app.Sequelize.UUIDV4,
         text: '我的',
         name: 'my',
         sort: 4,

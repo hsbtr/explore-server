@@ -2,8 +2,16 @@
 
 const Controller = require('egg').Controller;
 
+/**
+ * @Controller base
+ */
 class BaseController extends Controller {
-  // 获取底部菜单
+  /**
+   * @summary 获取底部菜单
+   * @router GET /base/tabBar
+   * @request query integer types
+   * @response 200 pr ok
+   */
   async tabBar() {
     const { ctx } = this;
     const { service } = ctx;
@@ -14,6 +22,7 @@ class BaseController extends Controller {
       result: null,
       mess: '查询成功',
     };
+    console.log(this.app.Sequelize.UUIDV4);
     if (!tabBarList) {
       const data = await service.base.getTabBar();
       if (data) {
