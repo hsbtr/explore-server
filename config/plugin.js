@@ -21,8 +21,8 @@ module.exports = {
     enable: true,
     package: 'egg-redis',
   },
-  swaggerdoc: {
+/*  swaggerdoc: {
     enable: true,
     package: 'egg-swagger-doc',
-  },
+  },*/
 };

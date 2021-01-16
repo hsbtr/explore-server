@@ -47,6 +47,7 @@ module.exports = appInfo => {
   };
 
   // swagger-doc 配置
+  /*
   config.swaggerdoc = {
     dirScanner: './app/controller',
     apiInfo: {
@@ -78,6 +79,7 @@ module.exports = appInfo => {
     routerMap: false,
     enable: true,
   };
+*/
 
   // 在这里添加您的中间件配置
   config.middleware = [];

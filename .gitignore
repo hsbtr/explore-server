@@ -3,6 +3,7 @@ npm-debug.log
 yarn-error.log
 node_modules/
 output/
+config/config.prod.js
 database/config.json
 yarn.lock
 coverage/
