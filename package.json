@@ -12,7 +12,7 @@
     "egg-router-plus": "^1.3.1",
     "egg-scripts": "^2.11.0",
     "egg-sequelize": "^6.0.0",
-    "egg-swagger-doc": "^2.3.2",
+    "egg-socket.io": "^4.1.6",
     "mysql2": "^2.2.5"
   },
   "devDependencies": {
@@ -29,12 +29,12 @@
     "node": ">=10.0.0"
   },
   "scripts": {
-    "start": "egg-scripts start --daemon --title=egg-server-explore-server",
+    "start": "egg-scripts start --daemon --title=egg-server-explore-server --sticky",
     "stop": "egg-scripts stop --title=egg-server-explore-server",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --sticky",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
+    "test-local": "egg-bin test --sticky",
     "cov": "egg-bin cov",
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
