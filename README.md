@@ -25,7 +25,8 @@ $ tar -zcvf ./output/release.tgz .
 构建时如要排除某些文件请使用以下命令
 ```bash
 $ npm install --production
-$ tar -zcvf ./output/release.tgz --exclude=.idea --exclude=.git --exclude=.github --exclude=output --exclude=node_modules  --exclude=logs  .
+$ tar -zcvf ./output/release.tgz --exclude=.idea --exclude=.git --exclude=.github --exclude=output --exclude=node_modules --exclude=database --exclude=.sequlizerc --exclude=.gitignore --exclude=.eslintrc --exclude=.eslintignore --exclude=logs  .
+$ tar -xzvf release.tgz //解压tar.gz
 ```
 
 ### 运行
