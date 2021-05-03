@@ -29,7 +29,7 @@ module.exports = appInfo => {
     // 用户名
     username: 'root',
     // 密码
-    password: 'hsbtr894',
+    password: 'hsbtr8940',
     // 支持何种数据库
     dialect: 'mysql',
     // 数据库名

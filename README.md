@@ -66,6 +66,7 @@ module.exports = {
 $ npx sequelize migration:generate --name=init-users
 ```
 数据库变更
+指定运行环境需要在命令后加`--env production`
 升级数据库
 ```bash
 npx sequelize db:migrate
